@@ -50,8 +50,8 @@ class NavController extends Controller
             $file->move($destination_path, $filename);
             $orgpic = $destination_path.'/'.$filename;
                 $thumb = Image::make($orgpic);
-                // $twidth= Image::make($orgpic)->width();
-                // $theight = Image::make($orgpic)->height();
+                $twidth= Image::make($orgpic)->width();
+                $theight = Image::make($orgpic)->height();
                 // if($twidth < $theight){
                 // $thumb->flip('v');
                  $thumb->resize(210, null, function ($constraint) {
