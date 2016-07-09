@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                   @foreach ($images as $p)
-                        <div class="col-md-3">
+                        <div class="col-md-3" style="padding-bottom:12px;">
                         	<img src="{{$p->thumbpath}}"/>
                         </div>
                      @endforeach   

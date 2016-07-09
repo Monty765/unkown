@@ -38,7 +38,9 @@ class NavController extends Controller
     }
 
     public function upload(Request $request){
-        //print_r($request->all());
+        //print_r($request->al);
+        $reqtype=$_SERVER['REQUEST_METHOD'];
+        if($reqtype =='POST'){
         $destination_path = 'uploads/';
         $thumb_path = 'thumbs/';
         $view_path = 'views/';
@@ -50,8 +52,11 @@ class NavController extends Controller
             $file->move($destination_path, $filename);
             $orgpic = $destination_path.'/'.$filename;
                 $thumb = Image::make($orgpic);
-                $twidth= Image::make($orgpic)->width();
-                $theight = Image::make($orgpic)->height();
+                // $twidth=getimagesize($orgpic);
+                // $theight = $thumb->height();
+                // echo $twidth[0];
+                // echo $twidth[1];
+                //print(Image::make($orgpic)->height());
                 // if($twidth < $theight){
                 // $thumb->flip('v');
                  $thumb->resize(210, null, function ($constraint) {
@@ -80,6 +85,8 @@ class NavController extends Controller
             $img->viewpath=$view_path.$file->getClientOriginalName();
             $img->save();
           endforeach;
+}
+
           $images=DB::table('images')->orderBy('id', 'DESC')->get();
         return view('appviews.viewUploads',compact('images'));
     }
