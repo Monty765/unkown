@@ -1,16 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<div id="feature"></div>
 <div class="container">
+
 <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel-body" id="thumbnails">
+                <div id="gallery">
+                
                   @foreach ($images as $p)
                         <div class="col-md-3" style="padding-bottom:12px;">
-                        	<img src="{{$p->thumbpath}}"/>
+                        <li><a href="#" rel="{{$p->viewpath}}" class="galImg" ><img src="{{$p->thumbpath}}"/></a></li>
+                        	
                         </div>
-                     @endforeach   
+                     @endforeach  
+                     </div> 
                 </div>
 
             </div>
