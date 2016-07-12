@@ -15,6 +15,7 @@ Route::get('/', 'IndexController@index');
 Route::get('/home', 'NavController@home');
 Route::post('upload','NavController@upload');
 Route::get('upload','NavController@upload');
+Route::get('albums','NavController@albums');
 Route::get('viewUploads', function () {	
     return view('appviews.uploads');
 });

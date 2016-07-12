@@ -92,5 +92,9 @@ class NavController extends Controller
           $images=DB::table('images')->groupby('dumptime')->get();
         return view('appviews.viewUploads',compact('images'));
     }
-
+public function albums(){
+   
+         $images=DB::table('images')->where('dumptime',$_GET['id'])->get();
+        return view('appviews.albums',compact('images'));
+    }
 }
