@@ -22,7 +22,7 @@
                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="file" name="files[]" multiple><br/>
                     <input type="radio" name="autpre" value="0" checked> Private 
-                    <input type="radio" name="autpre" value="1"> Public<br/><br/>
+                    <input type="radio" name="autpre" value="1"> Public<br/><br/> 
                     <input type="submit"/> 
                     </form>
                     

@@ -46,8 +46,9 @@ class NavController extends Controller
         $view_path = 'views/';
         $files = $request->file('files');
         $authpre=$request->input('autpre');
-
-          foreach ($files as $file) :
+        $d=strtotime("now");
+        $dumptime=date("Y-m-d h:i:s", $d);
+        foreach ($files as $file) :
             $filename = str_random(6).'_'.$file->getClientOriginalName();
             $file->move($destination_path, $filename);
             $orgpic = $destination_path.'/'.$filename;
@@ -83,11 +84,12 @@ class NavController extends Controller
             $img->authpre=$authpre;
             $img->thumbpath=$thumb_path.$file->getClientOriginalName();
             $img->viewpath=$view_path.$file->getClientOriginalName();
+            $img->dumptime=$dumptime;
             $img->save();
           endforeach;
 }
-
-          $images=DB::table('images')->orderBy('id', 'DESC')->get();
+          //select dumptime, count(*) from images group by dumptime;
+          $images=DB::table('images')->groupby('dumptime')->get();
         return view('appviews.viewUploads',compact('images'));
     }
 

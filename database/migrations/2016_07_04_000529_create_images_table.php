@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->string('thumbpath');
             $table->string('viewpath');
             $table->integer('authpre');
+            $table->string('dumptime');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -26,7 +27,9 @@ class CreateImagesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')
                         ->onDelete('restrict')
                         ->onUpdate('restrict');
-    });
+            
+
+        });
     }
 
     /**
