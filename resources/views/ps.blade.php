@@ -80,22 +80,24 @@
         </div>
          @else
          @endif
-        <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-body">
+         <div class="row">
+        <div id="componentWrapper">
+                
+              <div class="thumbContainer">
+                      
+                    <div class="thumbInnerContainer">
+                    <br/>
                   @foreach ($images as $p)
-                     <div class="col-md-3">
-                     <div class="galleryView">  
-                          <img  src="{{$p->filepath}}"/>
-                    </div>
-                    </div>
-                     @endforeach 
+                  <div class='thumbHolder' 
+                             data-title="Optional title">  
+                             <a class="pp_content" href="{{$p->viewpath}}" data-rel="prettyPhoto[gallery1]" title="Optional description in Prettyphoto.">
+                             <img class="thumb_hidden" src="{{$p->thumbpath}}" width="240" height="155" alt="Vimeo Video" /></a>  
+                  </div>
+                  @endforeach  
+                     </div> 
                 </div>
             </div>
-        </div>
-</div>
-
+</div>  
 
    
 </div>

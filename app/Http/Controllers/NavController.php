@@ -44,7 +44,7 @@ class NavController extends Controller
         $destination_path = 'uploads/';
         $thumb_path = 'thumbs/';
         $view_path = 'views/';
-        $files = $request->file('files');
+        $files = $request->file('image_file');
         $authpre=$request->input('autpre');
         $d=strtotime("now");
         $dumptime=date("Y-m-d h:i:s", $d);

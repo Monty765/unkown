@@ -82,6 +82,7 @@
         <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
         <script type="text/javascript" src="js/jquery.func.js"></script>
         <script type="text/javascript" src="js/jquery.thumbGallery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.form.min.js"></script>
         <script type="text/javascript">
         
             function thumbGallerySetupDone(){
